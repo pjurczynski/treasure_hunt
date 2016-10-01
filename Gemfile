@@ -7,6 +7,8 @@ gem 'pg'
 gem 'puma'
 gem 'active_model_serializers'
 gem 'activerecord-postgis-adapter'
+gem 'reform-rails'
+gem 'dry-types'
 
 group :development, :test do
   gem 'rspec-rails'
