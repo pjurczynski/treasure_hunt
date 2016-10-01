@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -9,7 +10,8 @@ gem 'active_model_serializers'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl'
-  gem 'pry'
+  gem 'database_cleaner'
+  gem 'pry-rails'
 end
 
 group :development do
