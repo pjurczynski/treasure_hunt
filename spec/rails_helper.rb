@@ -26,5 +26,6 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation, except: %w(spatial_ref_sys))
+    FactoryGirl.find_definitions
   end
 end
