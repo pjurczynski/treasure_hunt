@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161001153250) do
+ActiveRecord::Schema.define(version: 20161001155929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
 
+  create_table "hunts", force: :cascade do |t|
+    t.string    "email"
+    t.geography "current_location", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.datetime  "created_at",                                                                   null: false
+    t.datetime  "updated_at",                                                                   null: false
+    t.index ["current_location"], name: "index_hunts_on_current_location", using: :gist
+    t.index ["email"], name: "index_hunts_on_email", using: :btree
+  end
+
   create_table "treasures", force: :cascade do |t|
     t.geography "location",   limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.datetime  "created_at",                                                             null: false
+    t.datetime  "updated_at",                                                             null: false
     t.index ["location"], name: "index_treasures_on_location", using: :gist
   end
 
