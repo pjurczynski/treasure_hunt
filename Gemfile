@@ -7,8 +7,9 @@ gem 'pg'
 gem 'puma'
 gem 'active_model_serializers'
 gem 'activerecord-postgis-adapter'
-gem 'reform-rails'
 gem 'dry-types'
+gem 'trailblazer'
+gem 'trailblazer-rails'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -16,6 +17,7 @@ group :development, :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'pry-rails'
+  gem 'pry-doc'
 end
 
 group :development do
