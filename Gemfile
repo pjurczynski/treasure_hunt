@@ -11,6 +11,7 @@ gem 'activerecord-postgis-adapter'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl'
+  gem 'faker'
   gem 'database_cleaner'
   gem 'pry-rails'
 end
