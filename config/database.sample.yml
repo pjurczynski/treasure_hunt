@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  user: treasure_hunt
+  password: treasure_hunt
+
+development:
+  <<: *default
+  database: treasure_hunt_dev
+
+test:
+  <<: *default
+  database: treasure_hunt_test
