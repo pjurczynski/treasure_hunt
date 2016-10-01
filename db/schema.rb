@@ -15,4 +15,12 @@ ActiveRecord::Schema.define(version: 20161001153250) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  create_table "treasures", force: :cascade do |t|
+    t.geography "location",   limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.index ["location"], name: "index_treasures_on_location", using: :gist
+  end
+
 end
