@@ -26,6 +26,11 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation, except: %w(spatial_ref_sys))
+    ActiveJob::Base.queue_adapter = :test
     FactoryGirl.find_definitions
+  end
+
+  config.before(:each) do
+    ActionMailer::Base.deliveries.clear
   end
 end
