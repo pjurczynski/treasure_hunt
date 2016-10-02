@@ -2,11 +2,16 @@
 
 FactoryGirl.define do
   factory :hunt do
-    current_location "POINT(#{Faker::Address.latitude} #{Faker::Address.longitude})"
+    current_location do
+      Utils.point(
+        latitude: Faker::Address.latitude,
+        longitude: Faker::Address.longitude,
+      )
+    end
     email Faker::Internet.email
 
     trait :cracow do
-      current_location 'POINT(19.945704 50.051227)'
+      current_location Utils.point(latitude: 19.945704, longitude: 50.051227)
     end
   end
 end
