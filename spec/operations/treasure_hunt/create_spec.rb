@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative './shared_examples.rb'
 require 'rails_helper'
 
 describe TreasureHunt::Create do
