@@ -94,9 +94,6 @@ describe API::V1::TreasureHuntsController do
             ].join(', ')
         end
       end
-
-      it "doesn't send an email"
-      it "doesn't create a new hunt"
     end
   end
 end
