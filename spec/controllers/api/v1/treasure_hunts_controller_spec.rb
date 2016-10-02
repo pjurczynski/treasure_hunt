@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 require 'rails_helper'
 
 shared_examples 'runs operation' do
@@ -12,6 +11,7 @@ shared_examples 'runs operation' do
 end
 
 describe API::V1::TreasureHuntsController do
+  it_behaves_like 'authenticates api token'
   describe 'POST create' do
     let(:operation) { TreasureHunt::Create }
     before { allow(operation).to receive(:run).and_call_original }
