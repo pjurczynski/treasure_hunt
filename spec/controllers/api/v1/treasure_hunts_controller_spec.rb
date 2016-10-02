@@ -12,6 +12,8 @@ end
 
 describe API::V1::TreasureHuntsController do
   it_behaves_like 'authenticates api token'
+  it_behaves_like 'has throttle'
+
   describe 'POST create' do
     let(:operation) { TreasureHunt::Create }
     before { allow(operation).to receive(:run).and_call_original }
