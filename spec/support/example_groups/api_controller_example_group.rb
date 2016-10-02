@@ -5,6 +5,6 @@ module ApiControllerExampleGroup
   included do
     metadata[:type] = :api_controller
 
-    before { request.accept = Mime::JSON.to_s }
+    before { request.accept = Mime[:json].to_s }
   end
 end
