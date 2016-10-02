@@ -10,6 +10,8 @@ gem 'activerecord-postgis-adapter'
 gem 'dry-types'
 gem 'trailblazer'
 gem 'trailblazer-rails'
+gem 'redis-rails'
+gem 'redis-namespace'
 
 group :development, :test do
   gem 'rspec-rails'
