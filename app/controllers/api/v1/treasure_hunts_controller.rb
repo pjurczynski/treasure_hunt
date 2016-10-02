@@ -7,7 +7,7 @@ module API::V1
 
       if @operation.valid?
         render json: @operation,
-               status: :created,
+               status: @operation.model.persisted? ? :created : :ok,
                serializer: API::V1::TreasureHunt::CreateSerializer
       else
         render json: @operation,
