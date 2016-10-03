@@ -4,7 +4,7 @@ require 'rails_helper'
 describe Hunt do
   describe '.wininng_locations' do
     it 'calls query' do
-      query_class = WinningLocationsQuery
+      query_class = WithinRadiusQuery
       query_instance = double('query')
       my_point = Utils.point(longitude: 1, latitude: 1)
 
@@ -13,6 +13,7 @@ describe Hunt do
           relation: Hunt,
           column: :current_location,
           point: my_point,
+          radius: 5,
         ).and_return(query_instance)
 
         expect(query_instance).to receive(:call)
