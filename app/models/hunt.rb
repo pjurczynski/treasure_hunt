@@ -8,4 +8,13 @@ class Hunt < ApplicationRecord
       radius: Treasure::WINNING_RADIUS,
     ).call
   end)
+
+  scope :within_range, (lambda do |radius, location|
+    WithinRadiusQuery.new(
+      relation: self,
+      column: :current_location,
+      point: String(location),
+      radius: radius,
+    ).call
+  end)
 end
