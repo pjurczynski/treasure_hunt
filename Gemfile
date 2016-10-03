@@ -12,6 +12,7 @@ gem 'trailblazer'
 gem 'trailblazer-rails'
 gem 'redis-rails'
 gem 'redis-namespace'
+gem 'timecop'
 
 group :development, :test do
   gem 'rspec-rails'
