@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module API
+module Api
   class ApplicationController < ActionController::API
     class NotAuthenticated < StandardError; end
     class TooManyRequestsPerHour < StandardError; end

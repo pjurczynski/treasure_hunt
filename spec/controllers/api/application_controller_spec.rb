@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe API::ApplicationController do
+describe Api::ApplicationController do
   it_behaves_like 'authenticates api token'
   it_behaves_like 'has throttle'
 
@@ -11,7 +11,7 @@ describe API::ApplicationController do
 
       it 'raises not authenticated error' do
         expect { controller.authenticate_api_token! }
-          .to raise_error(API::ApplicationController::NotAuthenticated)
+          .to raise_error(Api::ApplicationController::NotAuthenticated)
       end
     end
     context 'with token header' do
@@ -32,7 +32,7 @@ describe API::ApplicationController do
       it 'raises error on the 21st request that was made within an hour' do
         20.times { controller.check_throttle! }
         expect { controller.check_throttle! }
-          .to raise_error(API::ApplicationController::TooManyRequestsPerHour)
+          .to raise_error(Api::ApplicationController::TooManyRequestsPerHour)
       end
     end
 

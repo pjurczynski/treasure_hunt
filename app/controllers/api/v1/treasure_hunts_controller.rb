@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module API::V1
-  class TreasureHuntsController < API::ApplicationController
+module Api::V1
+  class TreasureHuntsController < Api::ApplicationController
     def create
       run ::TreasureHunt::Create, params: treasure_hunt_params
 
       if @operation.valid?
         render json: @operation,
                status: @operation.model.persisted? ? :created : :ok,
-               serializer: API::V1::TreasureHunt::CreateSerializer
+               serializer: Api::V1::TreasureHunt::CreateSerializer
       else
         render json: @operation,
                status: :unprocessable_entity,
-               serializer: API::V1::TreasureHunt::ErrorSerializer
+               serializer: Api::V1::TreasureHunt::ErrorSerializer
       end
     end
 

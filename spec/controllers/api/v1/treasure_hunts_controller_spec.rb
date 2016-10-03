@@ -10,7 +10,7 @@ shared_examples 'runs operation' do
   end
 end
 
-describe API::V1::TreasureHuntsController do
+describe Api::V1::TreasureHuntsController do
   it_behaves_like 'authenticates api token'
   it_behaves_like 'has throttle'
 
