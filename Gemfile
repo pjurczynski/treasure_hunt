@@ -6,12 +6,21 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg'
 gem 'puma'
 gem 'active_model_serializers'
+gem 'activerecord-postgis-adapter'
+gem 'dry-types'
+gem 'trailblazer'
+gem 'trailblazer-rails'
+gem 'redis-rails'
+gem 'redis-namespace'
+gem 'timecop'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl'
+  gem 'faker'
   gem 'database_cleaner'
   gem 'pry-rails'
+  gem 'pry-doc'
 end
 
 group :development do
