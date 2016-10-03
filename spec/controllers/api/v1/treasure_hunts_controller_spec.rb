@@ -92,7 +92,6 @@ describe Api::V1::TreasureHuntsController do
             .to eq [
               "Email can't be blank",
               "Current location can't be blank",
-              "Treasure location can't be blank",
             ].join(', ')
         end
       end

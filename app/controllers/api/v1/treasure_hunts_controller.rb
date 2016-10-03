@@ -19,7 +19,7 @@ module Api::V1
     private
 
     def treasure_hunt_params
-      params.merge(treasure_location: Treasure.first.try(:location))
+      params.merge(treasure_location: Treasure.current.location)
     end
   end
 end
