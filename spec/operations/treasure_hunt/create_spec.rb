@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative './shared_examples.rb'
 require 'rails_helper'
 
 describe TreasureHunt::Create do
@@ -16,13 +15,8 @@ describe TreasureHunt::Create do
   end
 
   describe '.contract' do
-    subject { described_class.contract }
-
     describe 'coercions' do
-      it 'coerces current_location to Point' do
-        expect(subject.definitions['current_location'][:type])
-          .to be CustomTypes::Point
-      end
+      it_behaves_like 'coerces type', 'current_location', CustomTypes::Point
     end
   end
 

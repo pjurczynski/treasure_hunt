@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-describe WinningLocationsQuery do
+describe WithinRadiusQuery do
   describe '#call' do
     let(:latitude) { 50.051227 }
     let(:longitude) { 19.945704 }
@@ -26,6 +26,7 @@ describe WinningLocationsQuery do
         relation: Hunt,
         column: :current_location,
         point: Utils.point(latitude: latitude, longitude: longitude),
+        radius: 5,
       )
     end
 

@@ -1,15 +1,16 @@
 # frozen_string_literal: true
-class WinningLocationsQuery
-  attr_reader :relation, :column, :point
+class WithinRadiusQuery
+  attr_reader :relation, :column, :point, :radius
 
-  def initialize(relation:, column:, point:)
+  def initialize(relation:, column:, point:, radius:)
     @relation = relation
     @column = String(column)
     @point = point
+    @radius = radius
   end
 
   def call
-    relation.where(round(distance).lteq(Treasure::WINNING_RADIUS))
+    relation.where(round(distance).lteq(radius))
   end
 
   private
