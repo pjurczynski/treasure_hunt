@@ -1,10 +1,15 @@
 # frozen_string_literal: true
 FactoryGirl.define do
   factory :treasure do
-    location "POINT(#{Faker::Address.latitude} #{Faker::Address.longitude})"
+    location do
+      Utils.point(
+        latitude: Faker::Address.latitude,
+        longitude: Faker::Address.longitude,
+      )
+    end
 
     trait :cracow do
-      location 'POINT(19.945704 50.051227)'
+      location Utils.point(latitude: 19.945704, longitude: 50.051227)
     end
   end
 end

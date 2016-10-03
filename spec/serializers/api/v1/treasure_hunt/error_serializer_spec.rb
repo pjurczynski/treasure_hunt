@@ -2,7 +2,7 @@
 require 'spec_helper'
 require_relative '../../../../../app/serializers/api/v1/treasure_hunt/create_serializer'
 
-describe API::V1::TreasureHunt::ErrorSerializer do
+describe Api::V1::TreasureHunt::ErrorSerializer do
   let(:operation_double) do
     double(
       'operation',

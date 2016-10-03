@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module API::V1::TreasureHunt
+module Api::V1::TreasureHunt
   class ErrorSerializer < ApplicationSerializer
     attributes :status, :distance, :error
 

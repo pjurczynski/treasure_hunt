@@ -11,5 +11,6 @@ Bundler.require(*Rails.groups)
 module TreasureHunt
   class Application < Rails::Application
     config.autoload_paths << Rails.root.join('app/serializers')
+    config.autoload_paths << Rails.root.join('app/queries')
   end
 end
