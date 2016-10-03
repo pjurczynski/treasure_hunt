@@ -7,7 +7,7 @@ module ApiControllerExampleGroup
 
     before do
       request.accept = Mime[:json].to_s
-      request.headers['API_TOKEN'] = Rails.application.secrets.api_token
+      request.headers['X-API-TOKEN'] = Rails.application.secrets.api_token
     end
   end
 end

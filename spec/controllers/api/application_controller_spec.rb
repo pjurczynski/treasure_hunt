@@ -7,7 +7,7 @@ describe Api::ApplicationController do
 
   describe '#authenticate_api_token!' do
     context 'without token header' do
-      before { controller.request.headers['API_TOKEN'] = nil }
+      before { controller.request.headers['X-API-TOKEN'] = nil }
 
       it 'raises not authenticated error' do
         expect { controller.authenticate_api_token! }

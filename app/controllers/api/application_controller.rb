@@ -8,7 +8,7 @@ module Api
     before_action :check_throttle!
 
     def authenticate_api_token!
-      return if request.headers['API_TOKEN'].eql?(Rails.application.secrets.api_token)
+      return if request.headers['X-API-TOKEN'].eql?(Rails.application.secrets.api_token)
       raise NotAuthenticated
     end
 
