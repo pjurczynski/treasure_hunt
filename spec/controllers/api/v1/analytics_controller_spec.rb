@@ -22,7 +22,7 @@ describe Api::V1::AnalyticsController do
     it { is_expected.to have_http_status :ok }
     it_behaves_like 'runs analytics index operation'
 
-    fit 'returns expected json structure' do
+    it 'returns expected json structure' do
       hunt = create(:hunt, current_location: Utils.point(longitude: 0.0, latitude: 0.0))
 
       subject
