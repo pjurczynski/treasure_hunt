@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
-shared_examples 'runs operation' do
+shared_examples 'runs analytics create operation' do
   it 'uses operation' do
     subject
     expect(operation).to have_received(:run).with(
@@ -31,7 +31,7 @@ describe Api::V1::TreasureHuntsController do
       end
 
       it { is_expected.to have_http_status :created }
-      it_behaves_like 'runs operation'
+      it_behaves_like 'runs analytics create operation'
 
       it 'returns expected json structure' do
         subject
@@ -45,7 +45,7 @@ describe Api::V1::TreasureHuntsController do
         before { hunt.save }
 
         it { is_expected.to have_http_status :ok }
-        it_behaves_like 'runs operation'
+        it_behaves_like 'runs analytics create operation'
 
         it 'returns expected json structure' do
           subject
@@ -67,7 +67,7 @@ describe Api::V1::TreasureHuntsController do
       end
 
       it { is_expected.to have_http_status :created }
-      it_behaves_like 'runs operation'
+      it_behaves_like 'runs analytics create operation'
 
       it 'returns expected json structure' do
         subject
